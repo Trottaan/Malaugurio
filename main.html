@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ficha de RPG - Mau Presságio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="tema-escuro">
+    <div class="container tema-escuro">
+        <div class="header">
+            <h1>Ficha de RPG - Mau Presságio</h1>
+        </div>
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('info')">📋 Informações</div>
+            <div class="tab" onclick="showTab('personagem')">👤 Personagem</div>
+            <div class="tab" onclick="showTab('atributos')">💪 Atributos</div>
+            <div class="tab" onclick="showTab('pericias')">🎯 Perícias</div>
+            <div class="tab" onclick="showTab('inventario')">🎒 Inventário</div>
+            <div class="tab" onclick="showTab('habilidades')">✨ Habilidades</div>
+            <div class="tab" onclick="showTab('configuracoes')">⚙️ Configurações</div>
+        </div>
+
+        <!-- Aba de Informações -->
+        <div id="info" class="tab-content active">
+            <h3>Informações</h3>
+            <div class="field">
+                <label>Pontos de Vida:</label>
+                <span id="pv-atual" contenteditable="true">0</span>/<span id="pv-total">0</span>
+            </div>
+            <div class="field">
+                <label>Sanidade:</label>
+                <span id="sanidade-atual" contenteditable="true">0</span>/<span id="sanidade-total">0</span>
+            </div>
+            <div class="field">
+                <label>Deslocamento:</label>
+                <span id="deslocamento" contenteditable="true">0</span>
+            </div>
+            <div class="field">
+                <label>Mana:</label>
+                <span id="mana-atual" contenteditable="true">0</span>/<span id="mana-total">0</span>
+            </div>
+            <div class="field">
+                <label>Carga:</label>
+                <span id="carga-atual" contenteditable="true">0</span>/<span id="carga-total">0</span>
+            </div>
+            <div class="field">
+                <label>Classe de Armadura:</label>
+                <span id="ca" contenteditable="true">0</span>
+            </div>
+        </div>
+
+        <!-- Aba de Personagem -->
+        <div id="personagem" class="tab-content">
+            <h3>Personagem</h3>
+            <div class="field"><label>Nome:</label><input type="text" id="nome" placeholder="August Diaz"></div>
+            <div class="field"><label>Tendência:</label><input type="text" id="tendencia" placeholder="Caótico bom"></div>
+            <div class="field"><label>Idade:</label><input type="text" id="idade" placeholder="24 anos"></div>
+            <div class="field"><label>Altura:</label><input type="text" id="altura" placeholder="1.68"></div>
+            <div class="field"><label>Descrição:</label><textarea id="descricao"></textarea></div>
+            <div class="field"><label>Laços:</label><textarea id="lacos"></textarea></div>
+        </div>
+
+        <!-- Aba de Atributos -->
+        <div id="atributos" class="tab-content">
+            <h3>Atributos</h3>
+            <div class="field"><label>Força:</label><input type="number" id="forca" class="atributo-input"></div>
+            <div class="field"><label>Destreza:</label><input type="number" id="destreza" class="atributo-input"></div>
+            <div class="field"><label>Vigor:</label><input type="number" id="vigor" class="atributo-input"></div>
+            <div class="field"><label>Intelecto:</label><input type="number" id="intelecto" class="atributo-input"></div>
+            <div class="field"><label>Presença:</label><input type="number" id="presenca" class="atributo-input"></div>
+        </div>
+
+        <!-- Aba de Perícias -->
+        <div id="pericias" class="tab-content">
+            <h3>Perícias</h3>
+            
+            <!-- Campo de Busca -->
+            <div class="busca">
+                <input type="text" id="busca-pericias" placeholder="Buscar perícia...">
+            </div>
+
+            <!-- Categorias de Perícias -->
+            <div class="categorias">
+                <!-- Força -->
+                <fieldset>
+                    <legend>Força</legend>
+                    <div class="field"><label>Atletismo:</label><input type="text" id="atletismo"></div>
+                    <div class="field"><label>Luta:</label><input type="text" id="luta"></div>
+                </fieldset>
+
+                <!-- Destreza -->
+                <fieldset>
+                    <legend>Destreza</legend>
+                    <div class="field"><label>Acrobacia:</label><input type="text" id="acrobacia"></div>
+                    <div class="field"><label>Furtividade:</label><input type="text" id="furtividade"></div>
+                    <div class="field"><label>Iniciativa:</label><input type="text" id="iniciativa"></div>
+                    <div class="field"><label>Reflexos:</label><input type="text" id="reflexos"></div>
+                </fieldset>
+
+                <!-- Intelecto -->
+                <fieldset>
+                    <legend>Intelecto</legend>
+                    <div class="field"><label>Investigação:</label><input type="text" id="investigacao"></div>
+                    <div class="field"><label>Medicina:</label><input type="text" id="medicina"></div>
+                    <div class="field"><label>Sobrevivência:</label><input type="text" id="sobrevivencia"></div>
+                    <div class="field"><label>Pontaria:</label><input type="text" id="pontaria"></div>
+                    <div class="field"><label>Pilotagem:</label><input type="text" id="pilotagem"></div>
+                    <div class="field"><label>Mecânica:</label><input type="text" id="mecanica"></div>
+                </fieldset>
+
+                <!-- Presença -->
+                <fieldset>
+                    <legend>Presença</legend>
+                    <div class="field"><label>Diplomacia:</label><input type="text" id="diplomacia"></div>
+                    <div class="field"><label>Lábia:</label><input type="text" id="labia"></div>
+                    <div class="field"><label>Intimidação:</label><input type="text" id="intimidacao"></div>
+                    <div class="field"><label>Percepção:</label><input type="text" id="percepcao"></div>
+                    <div class="field"><label>Vontade:</label><input type="text" id="vontade"></div>
+                    <div class="field"><label>Adestramento:</label><input type="text" id="adestramento"></div>
+                    <div class="field"><label>Charme:</label><input type="text" id="charme"></div>
+                    <div class="field"><label>Intuição:</label><input type="text" id="intuicao"></div>
+                </fieldset>
+
+                <!-- Vigor -->
+                <fieldset>
+                    <legend>Vigor</legend>
+                    <div class="field"><label>Fortitude:</label><input type="text" id="fortitude"></div>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- Aba de Inventário -->
+        <div id="inventario" class="tab-content">
+            <h3>Inventário</h3>
+            <div class="inventario-tabs">
+                <div class="inventario-tab active" onclick="showInventarioTab('armadura')">Armadura</div>
+                <div class="inventario-tab" onclick="showInventarioTab('roupas')">Roupas</div>
+                <div class="inventario-tab" onclick="showInventarioTab('armas')">Armas</div>
+                <div class="inventario-tab" onclick="showInventarioTab('acessorios')">Acessórios</div>
+                <div class="inventario-tab" onclick="showInventarioTab('artefatos')">Artefatos</div>
+                <div class="inventario-tab" onclick="showInventarioTab('outros')">Outros</div>
+            </div>
+            <div id="armadura" class="inventario-categoria active">
+                <div id="inventario-container-armadura"></div>
+                <button onclick="adicionarItem('armadura')">Adicionar Item</button>
+            </div>
+            <div id="roupas" class="inventario-categoria">
+                <div id="inventario-container-roupas"></div>
+                <button onclick="adicionarItem('roupas')">Adicionar Item</button>
+            </div>
+            <div id="armas" class="inventario-categoria">
+                <div id="inventario-container-armas"></div>
+                <button onclick="adicionarItem('armas')">Adicionar Item</button>
+            </div>
+            <div id="acessorios" class="inventario-categoria">
+                <div id="inventario-container-acessorios"></div>
+                <button onclick="adicionarItem('acessorios')">Adicionar Item</button>
+            </div>
+            <div id="artefatos" class="inventario-categoria">
+                <div id="inventario-container-artefatos"></div>
+                <button onclick="adicionarItem('artefatos')">Adicionar Item</button>
+            </div>
+            <div id="outros" class="inventario-categoria">
+                <div id="inventario-container-outros"></div>
+                <button onclick="adicionarItem('outros')">Adicionar Item</button>
+            </div>
+        </div>
+
+        <!-- Aba de Habilidades -->
+        <div id="habilidades" class="tab-content">
+            <h3>Habilidades Especiais</h3>
+            <div id="habilidades-container"></div>
+            <button onclick="adicionarHabilidade()">Adicionar Habilidade</button>
+        </div>
+
+        <!-- Aba de Configurações -->
+        <div id="configuracoes" class="tab-content">
+            <h3>Configurações</h3>
+            <div class="field"><label>Pontos de Vida Total:</label><input type="number" id="pv-total-input"></div>
+            <div class="field"><label>Sanidade Total:</label><input type="number" id="sanidade-total-input"></div>
+            <div class="field"><label>Mana Total:</label><input type="number" id="mana-total-input"></div>
+            <div class="field"><label>Carga Total:</label><input type="number" id="carga-total-input"></div>
+            <div class="field"><label>Classe de Armadura:</label><input type="number" id="ca-input"></div>
+            <div class="field"><label>Deslocamento:</label><input type="number" id="deslocamento-input"></div>
+            <button onclick="salvarConfiguracoes()">Salvar Configurações</button>
+            <button onclick="alternarTema()">Alterar Tema</button>
+        </div>
+    </div>
+</body>
+</html>
