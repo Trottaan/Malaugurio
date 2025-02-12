@@ -1,0 +1,345 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e2f;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #2a2a40;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #e0e0e0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Abas */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background: #3a3a5a;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+    margin: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #4a4a6a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tab.active {
+    background: #5a5a8a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.tab:hover {
+    background: #6a6a9a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Conteúdo das Abas */
+.tab-content {
+    display: none;
+    padding: 20px;
+    background: #3a3a5a;
+    border-radius: 0 0 10px 10px;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Campos de Entrada */
+.field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #4a4a6a;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+    flex: 1;
+    text-align: left;
+    color: #e0e0e0;
+}
+
+input, textarea {
+    border: none;
+    background: #5a5a8a;
+    color: #e0e0e0;
+    font-size: 16px;
+    flex: 2;
+    padding: 8px;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background: #5a5a8a;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #6a6a9a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos para Itens e Habilidades */
+.item, .habilidade {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #4a4a6a;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.item.minimizado, .habilidade.minimizado {
+    padding: 10px;
+    background: #4a4a6a;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.item.minimizado:hover, .habilidade.minimizado:hover {
+    background: #5a5a8a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.item.expandido, .habilidade.expandido {
+    padding: 15px;
+    background: #5a5a8a;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.item .nome, .habilidade .nome {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.item .descricao, .habilidade .descricao {
+    display: none;
+    margin-top: 10px;
+}
+
+.item.expandido .descricao, .habilidade.expandido .descricao {
+    display: block;
+}
+
+.remove-item, .remove-habilidade {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.remove-item:hover, .remove-habilidade:hover {
+    background: #cc0000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos da Aba de Perícias */
+#pericias .busca {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#pericias .busca input {
+    width: 80%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #3a3a5a;
+    color: #e0e0e0;
+    font-size: 16px;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#pericias .categorias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#pericias fieldset {
+    border: 1px solid #4a4a6a;
+    border-radius: 10px;
+    padding: 15px;
+    flex: 1 1 calc(50% - 20px);
+    background: #3a3a5a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#pericias legend {
+    font-weight: bold;
+    font-size: 18px;
+    color: #e0e0e0;
+    padding: 0 10px;
+}
+
+#pericias .field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 8px;
+    background: #4a4a6a;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#pericias .field label {
+    font-weight: bold;
+    font-size: 14px;
+    flex: 1;
+    text-align: left;
+    color: #e0e0e0;
+}
+
+#pericias .field input {
+    border: none;
+    background: #5a5a8a;
+    color: #e0e0e0;
+    font-size: 14px;
+    flex: 2;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para campos editáveis */
+[contenteditable="true"] {
+    padding: 5px;
+    border: 1px solid #5a5a8a;
+    border-radius: 5px;
+    background: #5a5a8a;
+    color: #e0e0e0;
+    outline: none;
+    cursor: text;
+}
+
+[contenteditable="true"]:focus {
+    border-color: #6a6a9a;
+    background: #6a6a9a;
+}
+
+/* Abas do Inventário */
+.inventario-tabs {
+    display: flex;
+    justify-content: space-around;
+    background: #3a3a5a;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.inventario-tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    transition: 0.3s;
+    margin: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #4a4a6a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.inventario-tab.active {
+    background: #5a5a8a;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.inventario-tab:hover {
+    background: #6a6a9a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.inventario-categoria {
+    display: none;
+    padding: 20px;
+    background: #3a3a5a;
+    border-radius: 0 0 10px 10px;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.inventario-categoria.active {
+    display: block;
+}
